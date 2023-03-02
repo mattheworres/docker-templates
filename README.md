@@ -17,8 +17,8 @@ Firstly you need to be running unRAID ver 6.0.0 or later, once installed follow 
 7. Click on the "Create" button at the bottom of the window to begin pulling down the Docker image
 8. Once the image is downloaded you should see it appear in the "Docker Containers" sub-tab
 ___
-If you appreciate my work, then please consider buying me a beer  :D
+If you appreciate my work, then please consider buying me or Binhex a beer  :D
 
-[!Donate to Matt](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U6AZ6QENWDWPE)
+[Donate to Matt](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U6AZ6QENWDWPE)
 
-[!Donate to Binhex!!](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JTSH886FD9UM6)
+[Donate to Binhex!!](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JTSH886FD9UM6)
