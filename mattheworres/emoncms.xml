@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Containers>
+  <TemplateURL>https://raw.githubusercontent.com/mattheworres/docker-templates/main/mattheworres/emoncms.xml</TemplateURL>
+  <Beta>False</Beta>
+  <Category>Productivity:</Category>
+  <Name>Emoncms</Name>
+  <Description>
+    [b]Description[/b][br]
+    Web-based energy monitor. Slightly modified version of the official EmonCMS docker, for use on Unraid.[br][br]
+    [b]Configuration[/b][br]
+    TODO[br][br]
+    [b]Documentation[/b][br]
+    https://github.com/mattheworres/emoncms-docker[br]
+    (but also TODO)[br][br]
+  </Description>
+  <Overview>
+    Web-app for processing, logging and visualising energy, temperature and other environmental data.
+  </Overview>
+  <Registry>https://registry.hub.docker.com/r/mattheworres/emoncms/</Registry>
+  <GitHub>https://github.com/mattheworres/emoncms-docker</GitHub>
+  <Repository>mattheworres/emoncms</Repository>
+  <Project>https://emoncms.org/</Project>
+  <BindTime>true</BindTime>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8998</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Environment>
+    <Variable>
+      <Name>MYSQL_HOST</Name>
+      <Value>127.0.0.1</Value>
+      <Description>Host of the (not included in this container) MySQL/MariaDB host</Description>
+    </Variable>
+    <Variable>
+      <Name>MYSQL_PORT</Name>
+      <Value>3306</Value>
+      <Description>Port said host operates on. Default: 3306.</Description>
+    </Variable>
+    <Variable>
+      <Name>MYSQL_USER</Name>
+      <Value>emoncms</Value>
+      <Description>MySQL User. Default: emoncms.</Description>
+    </Variable>
+    <Variable>
+      <Name>MYSQL_PASSWORD</Name>
+      <Value>my_very_secure_password</Value>
+      <Description>Port said MySQL host operates on.</Description>
+      <Display>advanced</Display>
+    </Variable>
+    <Variable>
+      <Name>MYSQL_DATABASE</Name>
+      <Value>emoncms</Value>
+      <Description>Name of MySQL database. Default: emoncms.</Description>
+    </Variable>
+    <Variable>
+      <Name>MYSQL_DATABASE</Name>
+      <Value>emoncms</Value>
+      <Description>Name of MySQL database. Default: emoncms.</Description>
+    </Variable>
+    <Variable>
+      <Name>MYSQL_RANDOM_ROOT_PASSWORD</Name>
+      <Value>yes</Value>
+    </Variable>
+    <Variable>
+      <Name>REDIS_ENABLED</Name>
+      <Value>yes</Value>
+    </Variable>
+    <Variable>
+      <Name>REDIS_PORT</Name>
+      <Value>6379</Value>
+    </Variable>
+    <Variable>
+      <Name>REDIS_PREFIX</Name>
+      <Value>'emoncms'</Value>
+    </Variable>
+    <Variable>
+      <Name>MQTT_ENABLED</Name>
+      <Value>yes</Value>
+    </Variable>
+    <Variable>
+      <Name>MQTT_HOST</Name>
+      <Value>127.0.0.1</Value>
+    </Variable>
+    <Variable>
+      <Name>MQTT_PORT</Name>
+      <Value>1883</Value>
+    </Variable>
+    <Variable>
+      <Name>MQTT_USER</Name>
+      <Value>emoncms</Value>
+    </Variable>
+    <Variable>
+      <Name>MQTT_PASSWORD</Name>
+      <Value>YOUR_MQTT_PASS</Value>
+    </Variable>
+    <Variable>
+      <Name>MQTT_BASETOPIC</Name>
+      <Value>emon</Value>
+    </Variable>
+    <Variable>
+      <Name>PHPFINA_DIR</Name>
+      <Value>/var/opt/emoncms/phpfina/</Value>
+    </Variable>
+    <Variable>
+      <Name>PHPTIMESERIES_DIR</Name>
+      <Value>/var/opt/emoncms/phptimeseries/</Value>
+    </Variable>
+  </Environment>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/emoncms/phpfina</HostDir>
+      <ContainerDir>/var/opt/emoncms/phpfina/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/emoncms/phptimeseries/phpfina</HostDir>
+      <ContainerDir>/var/opt/emoncms/phptimeseries/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:8998]/</WebUI>
+  <Icon>https://emoncms.org/Modules/site/emoncms_front.png</Icon>
+  <DonateText>If you appreciate my work, then please consider buying me a beer :D</DonateText>
+  <DonateLink>https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U6AZ6QENWDWPE</DonateLink>
+  <DonateImg>https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif</DonateImg>
+  <ExtraParams></ExtraParams>
+</Containers>
