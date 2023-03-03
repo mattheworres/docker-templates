@@ -13,7 +13,7 @@
     <Category>Productivity: Tools:</Category>
     <WebUI>http://[IP]:[PORT:80]/</WebUI>
     <TemplateURL />
-    <Icon />
+    <Icon>https://docs.openenergymonitor.org/_images/myelectric_webapp.png</Icon>
     <ExtraParams />
     <PostArgs />
     <CPUset />
