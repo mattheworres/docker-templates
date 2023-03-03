@@ -1,133 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Containers>
-  <TemplateURL>https://raw.githubusercontent.com/mattheworres/docker-templates/main/mattheworres/emoncms.xml</TemplateURL>
-  <Beta>False</Beta>
-  <Category>Productivity:</Category>
-  <Name>Emoncms</Name>
-  <Description>
-    [b]Description[/b][br]
-    Web-based energy monitor. Slightly modified version of the official EmonCMS docker, for use on Unraid.[br][br]
-    [b]Configuration[/b][br]
-    TODO[br][br]
-    [b]Documentation[/b][br]
-    https://github.com/mattheworres/emoncms-docker[br]
-    (but also TODO)[br][br]
-  </Description>
-  <Overview>
-    Web-app for processing, logging and visualising energy, temperature and other environmental data.
-  </Overview>
-  <Registry>https://registry.hub.docker.com/r/mattheworres/emoncms/</Registry>
-  <GitHub>https://github.com/mattheworres/emoncms-docker</GitHub>
-  <Repository>mattheworres/emoncms</Repository>
-  <Project>https://emoncms.org/</Project>
-  <BindTime>true</BindTime>
-  <Networking>
-    <Mode>bridge</Mode>
-    <Publish>
-      <Port>
-        <HostPort>8998</HostPort>
-        <ContainerPort>80</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-    </Publish>
-  </Networking>
-  <Environment>
-    <Variable>
-      <Name>MYSQL_HOST</Name>
-      <Value>127.0.0.1</Value>
-      <Description>Host of the (not included in this container) MySQL/MariaDB host</Description>
-    </Variable>
-    <Variable>
-      <Name>MYSQL_PORT</Name>
-      <Value>3306</Value>
-      <Description>Port said host operates on. Default: 3306.</Description>
-    </Variable>
-    <Variable>
-      <Name>MYSQL_USER</Name>
-      <Value>emoncms</Value>
-      <Description>MySQL User. Default: emoncms.</Description>
-    </Variable>
-    <Variable>
-      <Name>MYSQL_PASSWORD</Name>
-      <Value>my_very_secure_password</Value>
-      <Description>Port said MySQL host operates on.</Description>
-      <Display>advanced</Display>
-    </Variable>
-    <Variable>
-      <Name>MYSQL_DATABASE</Name>
-      <Value>emoncms</Value>
-      <Description>Name of MySQL database. Default: emoncms.</Description>
-    </Variable>
-    <Variable>
-      <Name>MYSQL_DATABASE</Name>
-      <Value>emoncms</Value>
-      <Description>Name of MySQL database. Default: emoncms.</Description>
-    </Variable>
-    <Variable>
-      <Name>MYSQL_RANDOM_ROOT_PASSWORD</Name>
-      <Value>yes</Value>
-    </Variable>
-    <Variable>
-      <Name>REDIS_ENABLED</Name>
-      <Value>yes</Value>
-    </Variable>
-    <Variable>
-      <Name>REDIS_PORT</Name>
-      <Value>6379</Value>
-    </Variable>
-    <Variable>
-      <Name>REDIS_PREFIX</Name>
-      <Value>'emoncms'</Value>
-    </Variable>
-    <Variable>
-      <Name>MQTT_ENABLED</Name>
-      <Value>yes</Value>
-    </Variable>
-    <Variable>
-      <Name>MQTT_HOST</Name>
-      <Value>127.0.0.1</Value>
-    </Variable>
-    <Variable>
-      <Name>MQTT_PORT</Name>
-      <Value>1883</Value>
-    </Variable>
-    <Variable>
-      <Name>MQTT_USER</Name>
-      <Value>emoncms</Value>
-    </Variable>
-    <Variable>
-      <Name>MQTT_PASSWORD</Name>
-      <Value>YOUR_MQTT_PASS</Value>
-    </Variable>
-    <Variable>
-      <Name>MQTT_BASETOPIC</Name>
-      <Value>emon</Value>
-    </Variable>
-    <Variable>
-      <Name>PHPFINA_DIR</Name>
-      <Value>/var/opt/emoncms/phpfina/</Value>
-    </Variable>
-    <Variable>
-      <Name>PHPTIMESERIES_DIR</Name>
-      <Value>/var/opt/emoncms/phptimeseries/</Value>
-    </Variable>
-  </Environment>
-  <Data>
-    <Volume>
-      <HostDir>/mnt/user/appdata/emoncms/phpfina</HostDir>
-      <ContainerDir>/var/opt/emoncms/phpfina/</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-    <Volume>
-      <HostDir>/mnt/user/appdata/emoncms/phptimeseries/phpfina</HostDir>
-      <ContainerDir>/var/opt/emoncms/phptimeseries/</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-  </Data>
-  <WebUI>http://[IP]:[PORT:8998]/</WebUI>
-  <Icon>https://emoncms.org/Modules/site/emoncms_front.png</Icon>
-  <DonateText>If you appreciate my work, then please consider buying me a beer :D</DonateText>
-  <DonateLink>https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U6AZ6QENWDWPE</DonateLink>
-  <DonateImg>https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif</DonateImg>
-  <ExtraParams></ExtraParams>
-</Containers>
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Standalone emoncms</Name>
+    <Repository>mattheworres/emoncms</Repository>
+    <Registry>https://hub.docker.com/r/mattheworres/emoncms/</Registry>
+    <Network>bridge</Network>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://hub.docker.com/r/mattheworres/emoncms/</Support>
+    <Project />
+    <Overview>Web-based energy monitor. Slightly modified version of the official EmonCMS docker,
+        for use on Unraid.</Overview>
+    <Category>Productivity: Tools:</Category>
+    <WebUI>http://[IP]:[PORT:8998]/</WebUI>
+    <TemplateURL />
+    <Icon />
+    <ExtraParams />
+    <PostArgs />
+    <CPUset />
+    <DateInstalled>1677815765</DateInstalled>
+    <DonateText />
+    <DonateLink />
+    <Requires>(not included:) Redis + MySQL + MQTT containers</Requires>
+    <Config Name="Web UI Port" Target="80" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false"> 8998</Config>
+    <Config Name="PHPFina Dir" Target="/var/opt/emoncms/phpfina/" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false"> /mnt/user/appdata/emoncms/phpfina</Config>
+    <Config Name="PHPTimeSeries Dir" Target="/var/opt/emoncms/phptimeseries/" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false"> /mnt/user/appdata/emoncms/phptimeseries</Config>
+    <Config Name="MySQL Host" Target="MYSQL_HOST" Default="127.0.0.1" Mode="" Description="Host of the (not included in this container) MySQL/MariaDB host" Type="Variable" Display="always" Required="true" Mask="false" />
+    <Config Name="MySQL Password" Target="MYSQL_PASSWORD" Default="my_very_secure_password" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="true" />
+    <Config Name="MySQL Port" Target="MYSQL_PORT" Default="3306" Mode="" Description="Port MySQL host operates on. Default: 3306" Type="Variable" Display="always" Required="true" Mask="false" />
+    <Config Name="MySQL Database" Target="MYSQL_DATABASE" Default="emoncms" Mode="" Description="Name of MySQL Database. Default: emoncms." Type="Variable" Display="always" Required="true" Mask="false" />
+    <Config Name="MySQL Random Root Password" Target="MYSQL_RANDOM_ROOT_PASSWORD" Default="yes" Mode="" Type="Variable" Display="advanced" Required="false" Mask="false" />
+    <Config Name="Redis Enabled" Target="REDIS_ENABLED" Default="my_very_secure_password" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false" />
+    <Config Name="Redis Host" Target="REDIS_HOST" Default="127.0.0.1" Mode="" Description="Host of the (not included in this container) Redis" Type="Variable" Display="always" Required="true" Mask="false" />
+    <Config Name="Redis Port" Target="REDIS_PORT" Default="6379" Mode="" Description="Port Redis host operates on. Default: 6379" Type="Variable" Display="always" Required="true" Mask="false" />
+    <Config Name="Redis Prefix" Target="REDIS_DATABASE" Default="'emoncms'" Mode="" Description="Prefix for Redis. Default: 'emoncms'." Type="Variable" Display="always" Required="true" Mask="false" />
+    <Config Name="MQTT Enabled" Target="MQTT_ENABLED" Default="yes" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false" />
+    <Config Name="MQTT Host" Target="MQTT_HOST" Default="127.0.0.1" Mode="" Description="Host of the (not included in this container) MQTT" Type="Variable" Display="always" Required="true" Mask="false" />
+    <Config Name="MQTT Port" Target="MQTT_PORT" Default="1883" Mode="" Description="Port MQTT host operates on. Default: 1883" Type="Variable" Display="always" Required="true" Mask="false" />
+    <Config Name="MQTT Basetopic" Target="MQTT_BASETOPIC" Default="emon" Mode="" Description="Prefix for MQTT. Default: 'emoncms'." Type="Variable" Display="always" Required="true" Mask="false" />
+</Container>
