@@ -24,7 +24,10 @@
     <Config Name="Web UI Port" Target="80" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false"> 8998</Config>
     <Config Name="PHPFina Dir" Target="/var/opt/emoncms/phpfina/" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false"> /mnt/user/appdata/emoncms/phpfina</Config>
     <Config Name="PHPTimeSeries Dir" Target="/var/opt/emoncms/phptimeseries/" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false"> /mnt/user/appdata/emoncms/phptimeseries</Config>
+    <Config Name="PHPFina Dir" Target="PHPFINA_DIR" Default="/var/opt/emoncms/phpfina/" Mode="" Description="Path to PHPFina" Type="Variable" Display="advanced" Required="true" Mask="false" />
+    <Config Name="PHPTimeSeries Dir" Target="PHPTIMESERIES_DIR" Default="/var/opt/emoncms/phptimeseries/" Mode="" Description="Path to PHPTimeSeries" Type="Variable" Display="advanced" Required="true" Mask="false" />
     <Config Name="MySQL Host" Target="MYSQL_HOST" Default="127.0.0.1" Mode="" Description="Host of the (not included in this container) MySQL/MariaDB host" Type="Variable" Display="always" Required="true" Mask="false" />
+    <Config Name="MySQL User" Target="MYSQL_USER" Default="emoncms" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false" />
     <Config Name="MySQL Password" Target="MYSQL_PASSWORD" Default="my_very_secure_password" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="true" />
     <Config Name="MySQL Port" Target="MYSQL_PORT" Default="3306" Mode="" Description="Port MySQL host operates on. Default: 3306" Type="Variable" Display="always" Required="true" Mask="false" />
     <Config Name="MySQL Database" Target="MYSQL_DATABASE" Default="emoncms" Mode="" Description="Name of MySQL Database. Default: emoncms." Type="Variable" Display="always" Required="true" Mask="false" />
@@ -32,9 +35,11 @@
     <Config Name="Redis Enabled" Target="REDIS_ENABLED" Default="my_very_secure_password" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false" />
     <Config Name="Redis Host" Target="REDIS_HOST" Default="127.0.0.1" Mode="" Description="Host of the (not included in this container) Redis" Type="Variable" Display="always" Required="true" Mask="false" />
     <Config Name="Redis Port" Target="REDIS_PORT" Default="6379" Mode="" Description="Port Redis host operates on. Default: 6379" Type="Variable" Display="always" Required="true" Mask="false" />
-    <Config Name="Redis Prefix" Target="REDIS_DATABASE" Default="'emoncms'" Mode="" Description="Prefix for Redis. Default: 'emoncms'." Type="Variable" Display="always" Required="true" Mask="false" />
+    <Config Name="Redis Prefix" Target="REDIS_PREFIX" Default="'emoncms'" Mode="" Description="Prefix for Redis. Default: 'emoncms'." Type="Variable" Display="always" Required="true" Mask="false" />
     <Config Name="MQTT Enabled" Target="MQTT_ENABLED" Default="yes" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false" />
     <Config Name="MQTT Host" Target="MQTT_HOST" Default="127.0.0.1" Mode="" Description="Host of the (not included in this container) MQTT" Type="Variable" Display="always" Required="true" Mask="false" />
+    <Config Name="MQTT User" Target="MQTT_USER" Default="emoncms" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false" />
+    <Config Name="MQTT Password" Target="MQTT_PASSWORD" Default="my_very_secure_password" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="true" />
     <Config Name="MQTT Port" Target="MQTT_PORT" Default="1883" Mode="" Description="Port MQTT host operates on. Default: 1883" Type="Variable" Display="always" Required="true" Mask="false" />
     <Config Name="MQTT Basetopic" Target="MQTT_BASETOPIC" Default="emon" Mode="" Description="Prefix for MQTT. Default: 'emoncms'." Type="Variable" Display="always" Required="true" Mask="false" />
 </Container>
