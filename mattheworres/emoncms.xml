@@ -6,7 +6,7 @@
     <Network>bridge</Network>
     <Shell>bash</Shell>
     <Privileged>false</Privileged>
-    <Support>https://hub.docker.com/r/mattheworres/emoncms/</Support>
+    <Support>https://forums.unraid.net/topic/135871-support-matthew-orres-standalone-emoncms/</Support>
     <Project />
     <Overview>Web-based energy monitor. Slightly modified version of the official EmonCMS docker,
         for use on Unraid.</Overview>
