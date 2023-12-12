@@ -32,7 +32,7 @@
     <Config Name="MySQL Port" Target="MYSQL_PORT" Default="3306" Mode="" Description="Port MySQL host operates on. Default: 3306" Type="Variable" Display="always" Required="true" Mask="false" />
     <Config Name="MySQL Database" Target="MYSQL_DATABASE" Default="emoncms" Mode="" Description="Name of MySQL Database. Default: emoncms." Type="Variable" Display="always" Required="true" Mask="false" />
     <Config Name="MySQL Random Root Password" Target="MYSQL_RANDOM_ROOT_PASSWORD" Default="yes" Mode="" Type="Variable" Display="advanced" Required="false" Mask="false" />
-    <Config Name="Redis Enabled" Target="REDIS_ENABLED" Default="my_very_secure_password" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false" />
+    <Config Name="Redis Enabled" Target="REDIS_ENABLED" Default="yes" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false" />
     <Config Name="Redis Host" Target="REDIS_HOST" Default="127.0.0.1" Mode="" Description="Host of the (not included in this container) Redis" Type="Variable" Display="always" Required="true" Mask="false" />
     <Config Name="Redis Port" Target="REDIS_PORT" Default="6379" Mode="" Description="Port Redis host operates on. Default: 6379" Type="Variable" Display="always" Required="true" Mask="false" />
     <Config Name="Redis Prefix" Target="REDIS_PREFIX" Default="'emoncms'" Mode="" Description="Prefix for Redis. Default: 'emoncms'." Type="Variable" Display="always" Required="true" Mask="false" />
