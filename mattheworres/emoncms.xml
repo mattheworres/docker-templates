@@ -6,7 +6,7 @@
     <Network>bridge</Network>
     <Shell>bash</Shell>
     <Privileged>false</Privileged>
-    <Support>https://hub.docker.com/r/mattheworres/emoncms/</Support>
+    <Support>https://forums.unraid.net/topic/135871-support-matthew-orres-standalone-emoncms/</Support>
     <Project />
     <Overview>Web-based energy monitor. Slightly modified version of the official EmonCMS docker,
         for use on Unraid.</Overview>
@@ -35,11 +35,12 @@
     <Config Name="Redis Enabled" Target="REDIS_ENABLED" Default="yes" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false" />
     <Config Name="Redis Host" Target="REDIS_HOST" Default="127.0.0.1" Mode="" Description="Host of the (not included in this container) Redis" Type="Variable" Display="always" Required="true" Mask="false" />
     <Config Name="Redis Port" Target="REDIS_PORT" Default="6379" Mode="" Description="Port Redis host operates on. Default: 6379" Type="Variable" Display="always" Required="true" Mask="false" />
-    <Config Name="Redis Prefix" Target="REDIS_PREFIX" Default="'emoncms'" Mode="" Description="Prefix for Redis. Default: 'emoncms'." Type="Variable" Display="always" Required="true" Mask="false" />
+    <Config Name="Redis Prefix" Target="REDIS_PREFIX" Default="'emoncms'" Mode="" Description="Prefix for Redis. Default: 'emoncms'." Type="Variable" Display="advanced" Required="true" Mask="false" />
     <Config Name="MQTT Enabled" Target="MQTT_ENABLED" Default="yes" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false" />
     <Config Name="MQTT Host" Target="MQTT_HOST" Default="127.0.0.1" Mode="" Description="Host of the (not included in this container) MQTT" Type="Variable" Display="always" Required="true" Mask="false" />
     <Config Name="MQTT User" Target="MQTT_USER" Default="emoncms" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false" />
     <Config Name="MQTT Password" Target="MQTT_PASSWORD" Default="my_very_secure_password" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="true" />
     <Config Name="MQTT Port" Target="MQTT_PORT" Default="1883" Mode="" Description="Port MQTT host operates on. Default: 1883" Type="Variable" Display="always" Required="true" Mask="false" />
-    <Config Name="MQTT Basetopic" Target="MQTT_BASETOPIC" Default="emon" Mode="" Description="Prefix for MQTT. Default: 'emoncms'." Type="Variable" Display="always" Required="true" Mask="false" />
+    <Config Name="MQTT Basetopic" Target="MQTT_BASETOPIC" Default="emon" Mode="" Description="Prefix for MQTT. Default: 'emoncms'." Type="Variable" Display="advanced" Required="true" Mask="false" />
+    <Config Name="Domain" Target="EMONCMS_DOMAIN" Default="false" Mode="" Description="Domain of this installation, eg emoncms.local" Type="Variable" Display="advanced" Required="false" Mask="false" />
 </Container>
