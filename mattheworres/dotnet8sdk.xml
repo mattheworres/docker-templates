@@ -20,4 +20,6 @@
     <DonateText />
     <DonateLink />
     <Requires></Requires>
+    <Config Name="Web Access Port" Target="8080" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">9100</Config>
+    <Config Name="Application files" Target="/app" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/aspnet8</Config>
 </Container>
