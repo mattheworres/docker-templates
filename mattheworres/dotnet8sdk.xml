@@ -10,7 +10,7 @@
     <Project />
     <Overview>Runtime for ASP.NET Core, version 8</Overview>
     <Category>Productivity: Tools:</Category>
-    <WebUI>http://[IP]:[PORT:80]/</WebUI>
+    <WebUI>http://[IP]:[PORT:9100]/</WebUI>
     <TemplateURL />
     <Icon>https://mcr.microsoft.com/api/v1/catalog/productimage/f222062c4f59b7864163bd54d24fafc40f1e2f2513672e50bc08e5025d73e4e5</Icon>
     <ExtraParams />
